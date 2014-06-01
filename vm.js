@@ -13,5 +13,5 @@ process.on("message",function(m){
 		script_result = script.runInNewContext(m.context)||'';
 	}catch(e){result = e+'';}
 	
-	process.send((result.trim()+ '\n' + script_result.trim()).trim());
+	process.send((result.trim()+ '\n' + (script_result+'').trim()).trim());
 })
