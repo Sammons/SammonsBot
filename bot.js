@@ -112,7 +112,7 @@ client.simple_monitors = {
 				client.send("No. You have hands.",t)
 			}
 		},{
-			 regex: /^sb sudo make me a sandwich.*/i
+			 regex: /^sb sudo make me a\s.*\ssandwich.*/i
 			,logic: function(m,t,s) {
 				client.send("=/ OK.",t);
 				client.send(
