@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SammonsBot</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<style type="text/css">
+	body, html {width: 100%; height: 100%;}
+	#content {width: 800px; margin: auto; background: grey;}
+	#input {width: 400px;height: 200px; margin: 200px;}
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function() {
+
+		$('#input').keydown(function(e){
+			if (e.which == '13') {
+				var $elem = $('#input');
+
+				var content = $elem.val();
+				$.post('/send',{msg: content, chan: $('#chan').val()})
+				$elem.val('');
+				return e.preventDefault();
+ 			}
+		})
+	})
+	</script>
+</head>
+<body>
+<div id='content'>
+	<input type='text' id="chan">
+	<textarea id="input" placeholder="type here..."></textarea>
+</div>
+</body>
+</html>
